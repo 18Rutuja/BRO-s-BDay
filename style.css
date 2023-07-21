@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
+body, html{
+    height: 100%;
+}
+
+body {
+  font-family: "Indie Flower", cursive !important;
+  background:black; /*CAPE HONEY*/
+  margin: 0px;
+  padding: 0px;
+  background-image: url("bg.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+::selection {
+  background: transparent;
+}
+
+h4 {
+  font-size: 26px;
+  line-height: 1px;
+  font-family: "Amatic SC", cursive !important;
+}
+
+.color1 {
+  color: #22d062;
+} /*MOUNTAIN MEADOW*/
+.color2 {
+  color: #fe2b14; /*TALL POPPY*/
+}
+
+.card {
+  color: #013243; /*SHERPA BLUE*/
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  width: 300px;
+  height: 400px;
+  background: #e8f5a8;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) perspective(2000px);
+  box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5),
+    20px 0 60px rgba(0, 0, 0, 0.5);
+  transition: 1s;
+}
+
+.card:hover {
+  transform: translate(-50%, -50%) perspective(2000px) rotate(15deg) scale(1.2);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5),
+    0 10px 100px rgba(0, 0, 0, 0.5);
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #bac1ba;
+  transform-origin: bottom;
+  transform: skewX(-45deg);
+}
+
+.card:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 5px;
+  height: 100%;
+  background: #92a29c;
+  transform-origin: left;
+  transform: skewY(-45deg);
+}
+
+.card .imgBox {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-origin: left;
+  transition: 0.7s;
+}
+
+.card .bark {
+  position: absolute;
+  background: #f3cef2;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.7s;
+}
+
+.card .imgBox img {
+  min-width: 250px;
+  max-height: 400px;
+}
+
+.card:hover .imgBox {
+  transform: rotateY(-135deg);
+}
+
+.card:hover .bark {
+  opacity: 1;
+  transition: 0.6s;
+  box-shadow: 300px 200px 100px rgba(0, 0, 0, 0.4) inset;
+}
+
+.card .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 0 0 0 10px;
+  z-index: -1;
+  margin-top: 70px;
+}
+
+.card .details p {
+  font-size: 15px;
+  line-height: 5px;
+  transform: rotate(-10deg);
+  padding: 0 0 0 20px;
+}
+
+.card .details h4 {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* animation */
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #111;
+  }
+
+
+  /* responsiveness */
+  @media screen and (max-width: 768px) {
+    body, html {
+      font-size: 14px; /* Adjust the font size for smaller screens */
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+
+    .card {
+      left: 50%;
+      width: 75%; /* Adjust the card width for smaller screens */
+    
+      max-width: 400px;
+      transform: translate(-50%, -50%) perspective(1000px); /* Adjust the card position and perspective for smaller screens */
+    }
+  
+    .card:before,
+    .card:after {
+      display: none; /* Hide the skew elements on smaller screens */
+    }
+  
+    .card .details {
+      margin-top: 50px; /* Adjust the top margin for details on smaller screens */
+    }
+  
+    .card .details p {
+      font-size: 12px; /* Adjust the font size for details on smaller screens */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .card .imgBox img {
+      min-width: 200px; /* Adjust the minimum width of the image for smaller screens */
+      max-height: 400px; /* Adjust the maximum height of the image for smaller screens */
+    }
+  
+    .card .imgBox {
+      transition: none; /* Remove the rotation transition for smaller screens */
+      transform: none; /* Reset the rotation for smaller screens */
+    }
+  
+    .card:hover .bark {
+      box-shadow: 200px 150px 100px rgba(0, 0, 0, 0.4) inset; /* Adjust the shadow position for smaller screens */
+    }
+  }
+  
